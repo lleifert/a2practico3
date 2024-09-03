@@ -12,17 +12,17 @@ int hash1(string key) {
 }
 
 int hash2(string key) {
-  int h = 0;
-  for (int i = 0; i < key.length(); i++)
-    h = h + key[i] * (i + 1);
-  return h;
+    int h = 0;
+    for (int i = 0; i < key.length(); i++)
+        h = h + key[i] * (i + 1);
+    return h;
 }
 
 int hash3(string key) {
-  int h = 0;
-  for (int i = 0; i < key.length(); i++)
-    h = 31 * h + int(key[i]);
-  return h;
+    int h = 0;
+    for (int i = 0; i < key.length(); i++)
+        h = 31 * h + int(key[i]);
+    return h;
 }
 
 int main()
