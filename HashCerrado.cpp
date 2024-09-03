@@ -6,7 +6,7 @@
 using namespace std;
 
 template <class K, class V>
-class HashCerrado : public Table<K, V>  // HashCerrado hereda de la clase Table
+class HashCerrado : public Table<K, V>
 {
 private:
     struct ClaveValor
@@ -35,16 +35,11 @@ private:
         if (arr[bucket] == NULL)
         {
             arr[bucket] = new ClaveValor(key, value, 1);
-
-            //cout << "key " << arr[bucket]->key << " value " << arr[bucket]->value << " numRepeticiones " << arr[bucket]->numRepeticiones << endl;
         }
         else if (arr[bucket]->key == key)
         {
-            //int numRepeticiones = arr[bucket]->numRepeticiones;
             arr[bucket]->value = value;
             arr[bucket]->numRepeticiones = arr[bucket]->numRepeticiones + 1;
-
-            //cout << "key " << arr[bucket]->key << " value " << arr[bucket]->value << " numRepeticiones " << arr[bucket]->numRepeticiones << endl;
         }
         else
         {
@@ -107,7 +102,6 @@ public:
 
     int getBucketNumRepeticiones(int indice)
     {
-        //assert(this->exists(arr[indice]->key));
         if (this->arr[indice] == 0)
         {
             return 0;
@@ -116,14 +110,8 @@ public:
         {
             return this->arr[indice]->numRepeticiones;    
         }
-        //cout << "xxx; " << this->arr[indice]->key << endl;        
     }
-
-    bool existeBucketNoVacio(int indice)
-    {
-        return this->exists(arr[indice]->key);
-    }
-
+    
     bool exists(K key)
     {
         return this->existsRec(0, key);
