@@ -34,7 +34,7 @@ private:
         int bucket = getBucket(key, i);
         if (arr[bucket] == NULL)
         {
-            arr[bucket] = new ClaveValor(key, value, 1);
+            arr[bucket] = new ClaveValor(key, value, 1);            
         }
         else if (arr[bucket]->key == key)
         {
@@ -111,7 +111,7 @@ public:
             return this->arr[indice]->numRepeticiones;    
         }
     }
-    
+
     bool exists(K key)
     {
         return this->existsRec(0, key);

@@ -43,7 +43,7 @@ int main()
         cin >> palabra;
         tabla->insert(palabra, 0);
     }
-
+    
     /*
     Recorro la tabla e identifico los repetidos 2 veces.
     Los sumo a la variable cantPalabrasRepetidas.
